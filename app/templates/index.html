@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block main %}
+  {% for b in button %}
+    <button id={{b}} class="mybut" style="width:80px; margin:5px;" value={{b}}> {{ b }} </button>
+  {% endfor %}
+
+  <div id="coin_table" url="{% url 'coin' %}" style="padding:20px;">
+    <table  id="task_form" style="padding:10px; margin:10px;">
+    <h1 id="H1"></h1>
+    
+    <tr>
+      <th scope="row">5분 뒤</th>
+      <td id="five"></td>
+    </tr>
+    
+    <tr>
+      <th scope="row">10분 뒤</th>
+      <td id="ten"></td>
+    </tr>
+    
+    <tr>
+      <th scope="row">30분 뒤</th>
+      <td id="thity"></td>
+    </tr>
+    
+    <tr>
+      <th scope="row">60분 뒤</th>
+      <td id="sixty"></td>
+    </tr>
+
+    <tr>
+      <th scope="row">12시간 뒤</th>
+      <td id="twelve"></td>
+    </tr>
+    
+    
+    <tr>
+      <th scope="row">24시간 뒤</th>
+      <td id="twentyfour"></td>
+    </tr>
+  </table>
+    
+  </div>
+  
+{% endblock %} {# block main #}

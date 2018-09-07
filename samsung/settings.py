@@ -10,11 +10,24 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'app/static/'),
+)
+print(STATICFILES_DIRS)
+print(STATIC_ROOT)
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = PROJECT_ROOT.split(os.sep)[-1]
+
+
+TEMPLATE_DIRS = ("/home/ubuntu/project/app/templates",)
+print(TEMPLATE_DIRS)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -25,7 +38,9 @@ SECRET_KEY = 'b9q5ca2q(sx1we9^fkpqxo!3nm6f^(izxt)w4t@6m2nj7x53ls'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "18.217.220.221",
+]
 
 
 # Application definition
@@ -54,7 +69,7 @@ ROOT_URLCONF = 'samsung.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["/home/ubuntu/project/app/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,6 +94,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 
 # Password validation

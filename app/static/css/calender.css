@@ -1,0 +1,18 @@
+.calender-week {
+  border-collapse: collapse;
+  border-top: 3px solid #168;
+}  
+.calender-week th {
+  color: #168;
+  background: #f0f6f9;
+}
+
+.calender-week td {
+  height:150px;
+}
+
+
+.calender-week th, .calender-week td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
